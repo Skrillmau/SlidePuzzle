@@ -3,6 +3,7 @@
   <head>
     <link rel="stylesheet" href="/styles/style.css" />
     <script type="text/javascript" src="index.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <meta charset="UTF-8" />
     <meta author="Julian Mateo Ballesteros Rojas" />
     <title>Slide Puzzle - Julian Ballesteros</title>
@@ -13,8 +14,14 @@
   </head>
   <body onload="load()">
     <div class="contaier">
-      <div class="guia"></div>
-
+      <div class="guia">
+        <div id= "count" class="movimientos"></div>
+        <div class="img">
+            <img src="/assets/gandalf.jpg" alt="choka">
+            <p>Imagen Original</p>
+        </div>
+      </div>
+        
       <div class="grid" >
         <div id="tile1" onclick="move('tile1')" class="tiles imgcont1">1</div>
         <div id="tile2" onclick="move('tile2')" class="tiles imgcont2">2</div>
@@ -33,7 +40,7 @@
         <div id="tile15" onclick="move('tile15')" class="tiles imgcont15">15</div>
         <div id="tile16" onclick="move('tile16')" class="tiles imgcont16">16</div>
       </div>
-      <button class="Boton" onclick="setUp()">Hola</button>
+      <button class="Boton" onclick="setUp()">Start</button>
     </div>
   </body>
 </html>

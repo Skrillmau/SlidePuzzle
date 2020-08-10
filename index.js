@@ -40,7 +40,6 @@ let playerArray = [];
 
 function setUp() {
   movements = 0;
-
   // verificar si es solucionable
   do {
     // desordenar el arreglo solucion por el arrelo de juego
@@ -64,8 +63,14 @@ function move(pos) {
   if (numero == 4 || numero == -4 || numero == 1 || numero == -1) {
     document.getElementsByClassName("imgcont16")[0].className = temp;
     document.getElementById(pos).className = "tiles imgcont16";
+    movements++;
+    document.getElementById("count").innerHTML = "Movimientos: " + movements;
   }
-  console.log(this.win());
+
+  let gano = this.win();
+  if (gano) {
+    swal("Ganaste!", "Movimientos: "+movements, "success");
+  }
 }
 function loadPlayerArray() {
   for (let i = 0; i < divID.length; i++) {
@@ -122,6 +127,7 @@ function solvable() {
   return false;
 }
 function load() {
+  document.getElementById("count").innerHTML = "Movimientos: " + movements;
   this.loadPlayerArray();
   console.log(playerArray);
   console.log(solution);
