@@ -1,0 +1,91 @@
+.body .container {
+  background: black;
+}
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  padding: 0;
+  padding-top: 200px;
+  width: 500px;
+  height: auto;
+}
+.grid div {
+  margin: 0;
+  padding: 0;
+}
+
+.imgcont1 {
+  background-image: url("/assets/gandalf.jpg");
+  background-position: 15% 0%;
+}
+.imgcont2 {
+  background-image: url("/assets/gandalf.jpg");
+  background-position: 40% 0%;
+}
+.imgcont3 {
+  background-image: url("/assets/gandalf.jpg");
+  background-position: 65% 0;
+}
+.imgcont4 {
+  background-image: url("/assets/gandalf.jpg");
+  background-position: 90% 0;
+}
+.imgcont5 {
+  background-image: url("/assets/gandalf.jpg");
+  background-position: 15% 35%;
+}
+.imgcont6 {
+  background-image: url("/assets/gandalf.jpg");
+  background-position: 40% 35%;
+}
+.imgcont7 {
+  background-image: url("/assets/gandalf.jpg");
+  background-position: 65% 35%;
+}
+.imgcont8 {
+  background-image: url("/assets/gandalf.jpg");
+  background-position: 90% 35%;
+}
+.imgcont9 {
+  background-image: url("/assets/gandalf.jpg");
+  background-position: 15% 65%;
+}
+.imgcont10 {
+  background-image: url("/assets/gandalf.jpg");
+  background-position: 40% 65%;
+}
+.imgcont11 {
+  background-image: url("/assets/gandalf.jpg");
+  background-position: 65% 65%;
+}
+.imgcont12 {
+  background-image: url("/assets/gandalf.jpg");
+  background-position: 90% 65%;
+}
+.imgcont13 {
+  background-image: url("/assets/gandalf.jpg");
+  background-position: 15% 99%;
+}
+.imgcont14 {
+  background-image: url("/assets/gandalf.jpg");
+  background-position: 40% 99%;
+}
+.imgcont15 {
+  background-image: url("/assets/gandalf.jpg");
+  background-position: 65% 99%;
+}
+.imgcont16 {
+  background-color: white;
+  color: white;
+}
+
+.grid .tiles {
+  flex: 1 0 20%;
+  margin: 1px;
+  padding: 0%;
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
+  color: white;
+}
