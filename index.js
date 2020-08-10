@@ -40,34 +40,47 @@ let playerArray = [];
 
 function setUp() {
   movements = 0;
+
   // verificar si es solucionable
-  do{
+  do {
     // desordenar el arreglo solucion por el arrelo de juego
     this.shuffle();
-     // Asignar nuevo orden barajado a los div
+    // Asignar nuevo orden barajado a los div
     for (let i = 0; i < divID.length; i++) {
-        document.getElementById(divID[i]).className = "tiles " + gameArray[i];
-      }
-  }while(!this.solvable());
+      document.getElementById(divID[i]).className = "tiles " + gameArray[i];
+    }
+  } while (!this.solvable());
 
   //asignar onclick
-  for(let j = 0 ; j<divID.length;j++ ){
+  for (let j = 0; j < divID.length; j++) {
     document.getElementById(divID[j]).style.pointerEvents = "auto";
   }
-
 }
-function move(pos){ 
-    let temp = document.getElementById(pos).className;
-    let prevPos = document.querySelector("."+temp.substring(6,)).id;
-    let blankPos = document.querySelector(".imgcont16").id;
-    let numero = prevPos.substring(4,) - blankPos.substring(4,);
-    if (numero == 4 || numero == -4 || numero == 1 || numero == -1) {
-        console.log(document.getElementsByClassName("imgcont16")[0].className);
-        document.getElementsByClassName("imgcont16")[0].className = temp;
-        document.getElementById(pos).className = "tiles imgcont16";
+function move(pos) {
+  let temp = document.getElementById(pos).className;
+  let prevPos = document.querySelector("." + temp.substring(6)).id;
+  let blankPos = document.querySelector(".imgcont16").id;
+  let numero = prevPos.substring(4) - blankPos.substring(4);
+  if (numero == 4 || numero == -4 || numero == 1 || numero == -1) {
+    document.getElementsByClassName("imgcont16")[0].className = temp;
+    document.getElementById(pos).className = "tiles imgcont16";
+  }
+  console.log(this.win());
+}
+function loadPlayerArray() {
+  for (let i = 0; i < divID.length; i++) {
+    playerArray[i] = document.getElementById(divID[i]).className.substring(6);
+  }
+}
+function win() {
+  for (let i = 0; i < playerArray.length; i++) {
+    if (playerArray[i] != solution[i]) {
+      return false;
     }
-}
+  }
 
+  return true;
+}
 function shuffle() {
   gameArray = solution.sort(function () {
     return Math.random() - 0.5;
@@ -76,7 +89,7 @@ function shuffle() {
 function getInversions(arr) {
   let inversions = 0;
   for (let i = 0; i < arr.length - 1; i++) {
-    for (let j = i+1; j < arr.length; j++) {
+    for (let j = i + 1; j < arr.length; j++) {
       if (
         arr[j].substring(7) &&
         arr[i].substring(7) &&
@@ -98,9 +111,8 @@ function getBlankRow() {
 }
 function solvable() {
   let inv = this.getInversions(gameArray);
-  
+
   let even = this.getBlankRow();
-  console.log(inv,even);
   if (even && inv % 2 === 1) {
     return true;
   } else if (!even && inv % 2 === 0) {
@@ -109,9 +121,12 @@ function solvable() {
 
   return false;
 }
-function load(){
-    for(let j = 0 ; j<divID.length;j++ ){
-        document.getElementById(divID[j]).style.pointerEvents = "none";
-      }
-    
+function load() {
+  this.loadPlayerArray();
+  console.log(playerArray);
+  console.log(solution);
+  console.log(this.win());
+  for (let j = 0; j < divID.length; j++) {
+    document.getElementById(divID[j]).style.pointerEvents = "none";
+  }
 }
