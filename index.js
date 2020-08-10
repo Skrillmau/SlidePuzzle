@@ -69,7 +69,8 @@ function move(pos) {
 
   let gano = this.win();
   if (gano) {
-    swal("Ganaste!", "Movimientos: "+movements, "success");
+    load();
+    swal("Ganaste!", "Movimientos: " + movements, "success");
   }
 }
 function loadPlayerArray() {
@@ -127,11 +128,9 @@ function solvable() {
   return false;
 }
 function load() {
+  movements = 0;
   document.getElementById("count").innerHTML = "Movimientos: " + movements;
   this.loadPlayerArray();
-  console.log(playerArray);
-  console.log(solution);
-  console.log(this.win());
   for (let j = 0; j < divID.length; j++) {
     document.getElementById(divID[j]).style.pointerEvents = "none";
   }
