@@ -81,7 +81,6 @@ body {
 .imgcont16 {
   background-color: white;
   color: black !important;
-  
 }
 
 .grid .tiles {
@@ -92,22 +91,18 @@ body {
   height: 150px;
   box-shadow: 0 2px 6px black;
   color: white;
-  
-  
 }
 .guia {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   margin: 0;
-  padding:0 ;
+  padding: 0;
   height: 100px;
-
 }
-.img p{
-    font-size: 20px;
-    margin-left: 25px;
-
+.img p {
+  font-size: 20px;
+  margin-left: 25px;
 }
 .img img {
   width: 200px;
@@ -116,32 +111,31 @@ body {
 .movimientos {
   margin-top: 20px;
   font-size: 30px;
-  background: #BA324F;
+  background: #ba324f;
   border-radius: 20px;
   padding: 15px;
-  border: solid 2px ;
-  color:white;
+  border: solid 2px;
+  color: white;
 }
-.container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.Boton{
-    margin-left:47.5%;
-    margin-top: 2%;
-    text-decoration: none;
-    font-weight: bolder;
-    font-size: 30px;
-    color: white;
-    background-color: #BA324F;
-    border-radius: 15px;
-    border: 2px solid;
-    outline: none;
-    cursor: pointer;
+.Boton {
+  margin-left: 47.5%;
+  margin-top: 2%;
+  text-decoration: none;
+  font-weight: bolder;
+  font-size: 30px;
+  color: white;
+  background-color: #ba324f;
+  border-radius: 15px;
+  border: 2px solid;
+  outline: none;
+  cursor: pointer;
 }
-.Boton:hover{
-    color:#BA324F;
-    background-color: white;
-    
+.Boton:hover {
+  color: #ba324f;
+  background-color: white;
 }
